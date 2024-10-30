@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Barra de Navegación</title>
+    <!-- Importar Google Font "Pacifico" -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Pacifico', cursive;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+        /* Estilos del título */
+        .titulo {
+            background-color: #FF0000;
+            padding: 20px;
+            font-size: 32px;
+            color: white;
+        }
+        /* Estilos de la barra de navegación */
+        .navbar {
+            background-color: #FF0000;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 20px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .navbar a:hover {
+            background-color: #cc0000;
+        }
+        .navbar a.active {
+            background-color: #B20000;
+        }
+        /* Estilos de las secciones */
+        .section {
+            display: none;
+            padding: 20px;
+        }
+        .section.active {
+            display: block;
+        }
+        /* Estilos para el contenedor de imagen */
+        .imagen-inicio img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+        /* Estilos responsivos */
+        @media (max-width: 600px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
+        /* Estilos para el iframe del video */
+        .video-container {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            // Oculta todas las secciones
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            // Muestra la sección seleccionada
+            document.getElementById(sectionId).classList.add('active');
+
+            // Actualiza el enlace activo en la barra de navegación
+            const links = document.querySelectorAll('.navbar a');
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`.navbar a[href="#${sectionId}"]`).classList.add('active');
+        }
+
+        // Mostrar la sección "Inicio" por defecto al cargar la página
+        window.onload = () => showSection('inicio');
+    </script>
+</head>
+<body>
+
+    <!-- Título encima de la barra de navegación -->
+    <div class="titulo">Fuerza MAYTE, tú puedes</div>
+
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <a href="#inicio" class="active" onclick="showSection('inicio')">Inicio</a>
+        <a href="#poesia" onclick="showSection('poesia')">Poesía</a>
+        <a href="#mensaje" onclick="showSection('mensaje')">Mensaje</a>
+    </div>
+
+    <!-- Sección Inicio -->
+    <div id="inicio" class="section active">
+        <h1>Mayte</h1>
+        <h2>¡Tú puedes con esto y con todo lo que te propongas!</h2>
+        <div class="imagen-inicio">
+            <img src="img\Fuerza1.jpeg" alt="Imagen de Bienvenida">
+            <p>Quien tiene la voluntad tiene la fuerza</p>
+        </div>
+    </div>
+
+    <!-- Sección Poesía -->
+    <div id="poesia" class="section">
+        <h2>Tu propia y unica esencia</h2>
+        <p>En un rincón del mundo, sin igual, </p>
+        <p>Vive una gran ser, única y especial.</p> 
+        <p>Con sueños y anhelos en su corazón,</p>  
+        <p>Forjando un destino con determinación.</p> 
+            
+        <p>Afronta desafíos con valentía y pasión,</p> 
+        <p>Forjando un futuro con dedicación.</p>  
+        <p>Cada día es un lienzo en blanco,</p>  
+        <p>Donde pinta su historia con encanto.</p> 
+            
+        <p>No importa el camino, la meta es clara,</p>  
+        <p>Alcanzar sus sueños, no importa cuán cara.</p>  
+        <p>En su ser hay fuerza, coraje y amor, </p> 
+        <p>Un poema de vida, un ser con valor.</p> 
+            
+        <p>Así eres tú, en tu propia esencia, </p> 
+        <p>Un ser lleno de luz y presencia. </p> 
+        <p>En este poema, te celebro a ti, </p> 
+        <p>Única e inigualable, para siempre aquí.</p> 
+        <H1>Esa eres Tu Mayte</H1>
+    </div>
+
+    <!-- Sección Mensaje -->
+    <div id="mensaje" class="section">
+        <h2>Para ti Mayte</h2>
+        <div class="video-container">
+            <iframe src="img\Jimmy Durante   i'll be seeing you Subtirulado en Español e Ingles.mp4" allowfullscreen></iframe>
+        </div>
+        <H2>Mensaje</H2>
+        <p>Sabes Mayte cuando te conoci yo en mi mente me dije</p>
+        <p>ella sera una persona que siempre que el mundo</p>
+        <p>se ponga en su contra ella continuara sin importar nada.</p>
+        <p>Que con esa valentia llegaria a lo mas alto,</p>
+        <p>que cumplira sus metas no importa las piedras que te ponga la vida</p>
+        <p>tu llegaras a lo alto y no estaras satisfecha quedras ir por mas. </p>
+        <p>Y que con esa mentalidad no habra obstaculo que te pueda detener</p>
+        <p>no habra motaña mas grande que te gane tu la destuiras</p>
+        <p>Cada día es una nueva oportunidad para intentar lo que quieras.</p>
+        <p>La vida se encoge o se expande en proporción a tu coraje.</p>
+        <p>Cree en ti misma y en todo lo que eres. 
+        <p>Sabes que hay algo dentro de ti que es más grande que cualquier obstáculo.</p>
+        <p>La clave del éxito es hacer lo que a uno le apasiona. Con ganas y esfuerzo, todo se puede conseguir.</p>
+        <p>Nunca dejes de aprender, porque la vida nunca deja de enseñar.</p>
+        <h2>Y nunca olvides Mayte que eres fuerte conseguiras lograr muchas cosas.</h2>
+        <h2>Yo lo se porque creo en ti.😇</h2>
+    </div>
+
+</body>
+</html>
